@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>КаналСервис</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<h1>Total: {{ total }} $</h1>
+<div class="scroll-table">
+	<table>
+		<thead>
+			<tr>
+				<th>№</th>
+				<th>Заказ №</th>
+				<th>Стоимость,$</th>
+				<th>Стоимость,Р</th>
+				<th>Срок поставки</th>
+			</tr>
+		</thead>
+	</table>
+
+	<div class="scroll-table-body">
+		<table>
+
+			<tbody>
+				{% for data in data_fetchall %}
+				<tr>
+					<td>{{ data[0] }}</td>
+					<td>{{ data[1] }}</td>
+                    <td>{{ data[2] }} </td>
+                    <td>{{ data[3] }}</td>
+                    <td>{{ data[4] }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+
+		</table>
+	</div>
+</div>
+</body>
+</html>
